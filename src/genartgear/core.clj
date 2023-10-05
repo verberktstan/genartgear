@@ -45,7 +45,7 @@
                            "-seed-" seed
                            ".tif")]
         (println "Setting noise & random seed to:" seed)
-        (q/noise-seed seed)
+        (q/noise-seed seed) ; TODO: Set noise and random seed to different seeds
         (q/random-seed seed)
 
         (draw-fn props) ; Call the draw function with the supplied props
@@ -54,10 +54,17 @@
           (q/save file-name)
           (println "done saving" file-name))))))
 
-#_(q/defsketch example
-    :title "Example"
-    :setup (setup {:hue 180})
-    :draw draw
-    :size [1300 800]
-    :features [:keep-on-top]
-    :middleware [m/fun-mode])
+(defmacro sketch
+  "Defines a Quil sketch with the supplied draw function."
+  [draw & props]
+  (let [{:keys [title] :or {title "genartgear-sketch"} :as m} (apply hash-map props)]
+    (concat
+      `(q/defsketch
+         ~(symbol title)
+         :title ~title
+         :setup ~(setup m)
+         :draw (wrap-draw ~draw)
+         :size ~(or (:size m) [500 300])
+         :features [:keep-on-top]
+         :middleware [m/fun-mode])
+      (reduce into (dissoc m :setup :draw :size)))))

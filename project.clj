@@ -1,5 +1,5 @@
-(defproject genartgear "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
+(defproject genartgear "0.1.1-SNAPSHOT"
+  :description "Genart Gear - A library with utilitys for generative artwork in Quil."
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
