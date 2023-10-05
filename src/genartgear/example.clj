@@ -3,41 +3,16 @@
             [quil.core :as q]
             [quil.middleware :as m]))
 
-(defn- draw [{::keys [hue] :as props}]
+(defn- draw
+  [{:keys [gray] :as props}]
   (println props)
-  (q/background 255)
-  (q/with-fill [hue 89 55]
-    (q/ellipse 100 100 200 200)))
+  (q/background (or gray (q/random 360))))
 
-                                        ; Copy this defsketch into your ns to use it:w
+;; Simply pass a draw function
+(gg/sketch draw)
 
-(q/defsketch example
-  :title "Example"
-  :setup (gg/setup {:directory (gg/dir) ; Supply this to parse the short git hash and use it in the filename
-                    :title     "example" ; Optional: Supply a title for use in the filename
+;; Supply additional arguments like :title & :size
+;; (gg/sketch draw :title "another-sketch" :size [800 300])
 
-                    ::hue 180 ; Just some props that are passed on into the draw function
-
-                    #_#_:save 3 ; Save 3 images
-
-                    #_#_:save false ; Don't save
-
-                    #_#_:seeds [123 234]
-                    #_#_:save  true ; Save 2 images with the above seeds
-                    })
-  :draw (gg/wrap-draw draw)
-  :size [1300 800]
-  :features [:keep-on-top]
-  :middleware [m/fun-mode])
-
-;; The most basic example that ever existed.
-#_#_(defn- draw [_]
-      (q/background (q/random 255)))
-
-(q/defsketch basic-example
-  :title "basic-example"
-  :setup (gg/setup)
-  :draw (gg/wrap-draw draw)
-  :size [800 500]
-  :features [:keep-on-top]
-  :middleware [m/fun-mode])
+;; Arguments passed to sketch will also be passed on to your draw fn.
+;; (gg/sketch draw :gray 180)

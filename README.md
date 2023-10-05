@@ -1,14 +1,10 @@
 # genartgear
 
-A Quil sketch designed to ... well, that part is up to you.
+Some functions to ease the usage of Quil for Generative Art.
 
 ## Usage
 
-LightTable - open `core.clj` and press `Ctrl+Shift+Enter` to evaluate the file.
-
-Emacs - run cider, open `core.clj` and press `C-c C-k` to evaluate the file.
-
-REPL - run `(require 'genartgear.core)`.
+Create a Jar with `lein uberjar` and copy the (non-standalone) jar to the :resource-paths of another Quil project.
 
 ## License
 
