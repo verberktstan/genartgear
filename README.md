@@ -10,7 +10,6 @@ Copy `genartgear-0.1.3-SNAPSHOT.jar` to the :resource-paths of your Quil project
 
 ## License
 
-Copyright © 2016 FIXME
+Copyright © 2024 Stan Verberkt
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the MIT License.
