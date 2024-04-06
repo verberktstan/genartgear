@@ -4,7 +4,9 @@ Some functions to ease the usage of Quil for Generative Art.
 
 ## Usage
 
-Create a Jar with `lein uberjar` and copy the (non-standalone) jar to the :resource-paths of another Quil project.
+Copy `genartgear-0.1.3-SNAPSHOT.jar` to the :resource-paths of your Quil project. 
+
+..or create a Jar with `lein uberjar` and copy the (non-standalone) jar to the :resource-paths of your Quil project.
 
 ## License
 
