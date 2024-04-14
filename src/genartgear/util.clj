@@ -3,13 +3,14 @@
             [genartlib.util :as u]
             [quil.core :as q]))
 
-(defn- point?
-  [& numbers]
-  (every? number? numbers))
+(defn point?
+  [point]
+  (every? number? point))
 
-(defn- line?
-  [& points]
-  (every? point? points))
+(defn line?
+  [line]
+  (and (every? coll? line)
+       (every? point? line)))
 
 (defn collision?
   "Returns a function that returns true if point collides with another point, with respect to the margin."
