@@ -1,4 +1,5 @@
-(ns genartgear.color)
+(ns genartgear.color
+  (:require [genartgear.util :refer [clip wrap]]))
 
 ;; All colors are defined in HSBA
 ;; Hue [0, 360]
@@ -26,18 +27,6 @@
     #:metallic{:bdazzled-blue       [215.29, 68.92, 58.04, 1]
                :seaweed             [186.46, 92.86, 54.9, 1]
                :bittersweet-shimmer [358.93, 58.64, 74.9, 1]}))
-
-(defn- clip [lo hi]
-  (comp (partial max lo) (partial min hi)))
-
-(defn- wrap [lo hi]
-  (assert (> hi lo))
-  (let [diff (- hi lo)]
-    (fn wrap* [input]
-      (loop [x input]
-        (if (<= lo x hi)
-          x
-          (recur (if (< x lo) (+ x diff) (- x diff))))))))
 
 (defn update-hue [[h s b a :as color] f & args]
   (assert (vector? color))
