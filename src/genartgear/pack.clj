@@ -1,5 +1,6 @@
 (ns genartgear.pack
   (:require [genartgear.core :refer [sketch]]
+            [genartlib.algebra :as a]
             [genartlib.random :as r]
             [genartlib.util :as u]
             [quil.core :as q]))
@@ -16,14 +17,17 @@
     {:rpoint [rx ry]
      :point  [(u/w rx) (u/h ry)]}))
 
-(defn- margin-fn [{:keys [rpoint]}]
-  (->> rpoint y (q/lerp 1/40 1/400) u/w))
+(defn- margin-fn [{:keys [rpoint]} _]
+  (u/w
+    (or
+      (some->> rpoint y (q/lerp 1/40 1/400))
+      1/220)))
 
 (defn- collision?
-  ([point] (collision? point (margin-fn point)))
-  ([{point-a :point} margin]
-   (fn collision* [{point-b :point}]
-     (< (a/point-dist point-a point-b) margin))))
+  [point-a]
+  (fn collision* [point-b]
+    (let [margin (margin-fn point-a point-b)]
+      (< (apply a/point-dist (map :point [point-a point-b])) margin))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; The packing transducer
