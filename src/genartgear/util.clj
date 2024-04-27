@@ -43,3 +43,16 @@
            (recur (if (< x lo) (+ x diff) (- x diff))))))))
   ([input lo hi]
    ((wrap lo hi) input)))
+
+(defn fold
+  "Returns a function that returns a folded value between lo and hi. When input
+  is given, wrap returns the result immediately."
+  ([lo hi] (-> lo (< hi) assert)
+  (fn fold* [input]
+    (if (<= lo input hi)
+      input
+      (recur
+        (if (> input hi)
+          (- hi (- input hi))
+          (+ lo (- lo input)))))))
+  ([input lo hi] ((fold lo hi) input)))
