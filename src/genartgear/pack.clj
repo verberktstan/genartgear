@@ -53,7 +53,7 @@
             (zero? @retries-left)
             (reduced result)
 
-            (some (remove-fn item) @state)
+            (some (remove-fn item) #_result @state)
             (do (vswap! retries-left dec)
                 result)
 
@@ -78,7 +78,7 @@
     :as   props}]
   (-> n pos-int? assert)
   (let [print-count (comp #(println "Packed" % "items.") count)]
-    (-> (transduce (comp (take n) (pack* props)) conj (repeatedly make-item))
+    (-> (transduce (comp (pack* props) (take n)) conj (repeatedly make-item))
         (doto print-count))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
