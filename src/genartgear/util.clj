@@ -56,3 +56,16 @@
           (- hi (- input hi))
           (+ lo (- lo input)))))))
   ([input lo hi] ((fold lo hi) input)))
+
+(defn tanh-curve
+  "Map input along a curve."
+  [{:keys [negate? factor]
+    :or {factor 1}}
+  input]
+  (-> factor pos? assert)
+  (-> input number? assert)
+  (cond-> input
+    negate? dec
+    factor (* factor)
+    :always clojure.math/tanh
+    negate? inc))
