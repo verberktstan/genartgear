@@ -3,6 +3,7 @@
             [genartlib.util :as u]
             [quil.core :as q]))
 
+;; TODO: Revamp this with respect to point maps (see below)
 (defn point?
   [point]
   (every? number? point))
@@ -66,6 +67,23 @@
   (-> input number? assert)
   (cond-> input
     negate? dec
-    factor (* factor)
+    factor  (* factor)
     :always clojure.math/tanh
     negate? inc))
+
+;;;;; On polar & cartrsisn 2D points
+
+(defn cartesian
+  [{:keys [x y angle magnitude] :or {x 0 y 0} :as point}]
+  (let [polar? (every? number? [angle magnitude])
+        coord  (when polar?
+                 (zipmap [:x :y] (a/angular-coords x y angle magnitude)))]
+  (cond-> point polar? (merge coord))))
+
+(defn point
+  ([m] (point (select-keys m [:x :y]) (select-keys x [:angle :magnitude])))
+  ([a b]
+    (let [coord (-> a cartesian (select-keys [:x :y]))] 
+      (merge-with + coord (cartesian b))))))))
+
+(def xy (juxt :x :y))
