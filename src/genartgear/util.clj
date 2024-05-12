@@ -69,3 +69,20 @@
     factor (* factor)
     :always clojure.math/tanh
     negate? inc))
+
+
+
+(defn cartesian
+  [{:keys [x y angle magnitude] :as point}]
+  (let [coord (zipmap [:x :y] (a/angular-coords angle magnitude))]
+  (cond-> point
+    (and angle magnitude)
+    (merge coord))))
+
+(defn point
+  ([m] (point (select-keys m [:x :y]) (select-keys x [:angle :magnitude])))
+  ([a b]
+    (let [cara (-> a cartesian (select-keys [:x :y]))] 
+      (merge-with + cara (cartesian b))))))))
+
+(def xy (juxt :x :y))
