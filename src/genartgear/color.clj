@@ -71,7 +71,18 @@
               :shimmering-blush    [349.16, 38.25, 85.1, 1] ; #D98695
               :sonic-silver        [0, 0, 45.88, 1] ; #757575 
               :steel-blue          [194.74, 100, 67.06, 1] ; #0081AB
-              }))
+              }
+   #:silver{:aztec-gold      [37.5, 57.44, 76.47, 1] ; #C39953
+            :burnished-brown [8, 27.95, 63.14, 1] ; #A17A74
+            :cerulean-frost  [207.91, 44.1, 76.47, 1] ; #6D9BC3
+            :cinnamon-satin  [343.49, 53.17, 80.39, 1] ; #CD607E
+            :copper-penny    [5.29, 39.31, 67.84, 1] ; #AD6F69
+            :cosmic-cobalt   [240.66, 66.91, 53.33, 1] ; #2E2D88
+            :glossy-grape    [285.45, 18.44, 70.2 ,1] ; #AB92B3
+            :granite-gray    [0, 0, 40.39, 1] ; #676767
+            :green-sheen     [167.81, 36.78, 68.24, 1] ; #6EAEA1
+            :lilac-luster    [310.91, 12.64, 68.24, 1] ; #AE98AA
+            }))
 
 (defn update-hue [[h s b a :as color] f & args]
   (assert (vector? color))
