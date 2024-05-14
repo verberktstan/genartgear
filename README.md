@@ -2,6 +2,8 @@
 
 Some functions to ease the usage of Quil for Generative Art.
 
+[![Clojars Project](https://img.shields.io/clojars/v/org.clojars.stanv/genartgear.svg?include_prereleases)](https://clojars.org/org.clojars.stanv/genartgear)
+
 ## Getting started
 
 Copy `genartgear-0.1.4-SNAPSHOT.jar` to the :resource-paths of your Quil project. 
