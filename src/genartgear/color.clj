@@ -144,7 +144,22 @@
                     :sapphire [215.17, 72.05, 63.14, 1] ; #2D5DA1
                     :smokey-topaz [14.75, 90.08, 51.37, 1] ; #832A0D
                     :tigers-eye [31.14, 87.29, 70.98, 1] ; #B56917
-                    }))
+                    }
+   #:magic-scent{:burnt-sienna   [13.82, 65.24, 91.37, 1] ; #E97451
+                 :tickle-me-pink [342.1, 49.21, 98.82, 1] ; #FC80A5
+                 :brick-red      [351.76 77.27 77.65 1] ; #C62D42
+                 :wisteria       [281, 27.27, 86.27, 1] ; #C9A0DC
+                 :sky-blue       [189.83, 49.57, 91.76, 1] ; #76D7EA
+                 :orange         [25, 80, 100, 1] ; #FF8833
+                 :jungle-green   [163.38, 76.02, 67.06, 1] ; #29AB87
+                 :brown          [14.34, 64.57, 68.63, 1] ; #AF593E
+                 :pine-green     [175.46, 99.17, 47.06, 1] ; #01786F
+                 :peach          [25.71, 35.69, 100, 1] ; #FFCBA4
+                 :goldenrod      [44.7, 59.13, 98.82, 1] ; #FCD667
+                 :red            [345.99, 95.78, 92.94, 1] ; #ED0A3F
+                 :yellow         [51.8, 55.38, 98.43, 1] ; #FBE870
+                 :dandelion      [45.84, 63.39, 99.61, 1] ; #FED85D
+                 }))
 
 (defn update-hue [[h s b a :as color] f & args]
   (assert (vector? color))
