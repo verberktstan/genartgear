@@ -96,7 +96,13 @@
             :sugar-plum      [325.07, 46.21, 56.86, 1] ; #914E75
             :twilight-lavender [328.62, 47.1, 54.12, 1] ; #8A496B
             :wintergreen-dream [166.8, 36.76, 53.33, 1] ; #56887D
-            }))
+            }
+   #:fragrance{:baby-powder [60, 1.57, 99.61, 1] ; #FEFEFA
+               :banana      [47.04, 83.53, 100, 1] ; #FFD12A
+               :blueberry   [220.36, 68.02, 96.86, 1] ; #4F86F7
+               :bubble-gum  [309.55, 17.25, 100, 1] ; #FFD3F8
+               :cedar-chest [7.97, 63.68, 78.82, 1] ; #C95A49
+               }))
 
 (defn update-hue [[h s b a :as color] f & args]
   (assert (vector? color))
