@@ -127,7 +127,13 @@
                :soap        [249.23, 16.32, 93.73, 1] ; #CEC8EF
                :strawberry  [341.11, 64.29, 98.82, 1] ; #FC5A8D
                :tulip       [357, 47.06, 100, 1] ; #FF878D
-               }))
+               }
+   #:jewelry-stones{:amethyst [244.14, 37.66, 60.39, 1] ; #64609A
+                    :citrine  [20, 93.88, 57.65, 1] ; #933709
+                    :emerald  [167.11, 88.17, 66.27, 1] ; #14A989
+                    :jade     [164.29, 54.55, 60.39, 1] ; #469A84
+                    :jasper   [7.92, 69.23, 81.57, 1] ; #D05340
+                    }))
 
 (defn update-hue [[h s b a :as color] f & args]
   (assert (vector? color))
