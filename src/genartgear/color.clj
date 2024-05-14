@@ -65,6 +65,12 @@
               :gold-fusion         [42.55, 41.35, 52.16, 1] ; #85754E
               :illuminating-emerald [163.75, 66.21, 56.86, 1] ; #319177
               :metallic-seaweed    [186.46, 92.86, 54.9, 1] ; #0A7E8C
+              :metallic-sunburst   [40.8, 64.1, 61.18, 1] ; #9C7C38
+              :razzmic-berry       [307.62, 44.68, 55.29, 1] ; #8D4E85 
+              :sheen-green         [79.53, 100, 83.14, 1] ; #8FD400
+              :shimmering-blush    [349.16, 38.25, 85.1, 1] ; #D98695
+              :sonic-silver        [0, 0, 45.88, 1] ; #757575 
+              :steel-blue          [194.74, 100, 67.06, 1] ; #0081AB
               }))
 
 (defn update-hue [[h s b a :as color] f & args]
