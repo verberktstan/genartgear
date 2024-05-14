@@ -50,6 +50,21 @@ Arguments passed to the sketch macro will be passed on to your draw fn.
 
 `(gg/sketch draw :gray 180)`
 
+## Color
+
+```
+(ns genartgear.example
+  (:require [genartgear.core :as gg]
+            [genartgear.color :as color]
+            [quil.core :as q]))
+
+(defn- draw [_]
+  (let [tangerine (get color/CRAYOLA :fluorescent/atomic-tangerine)]
+    (apply q/background tangerine)))
+
+(gg/sketch draw)
+```
+
 ## License
 
 Copyright © 2024 Stan Verberkt
