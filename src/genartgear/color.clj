@@ -102,6 +102,16 @@
                :blueberry   [220.36, 68.02, 96.86, 1] ; #4F86F7
                :bubble-gum  [309.55, 17.25, 100, 1] ; #FFD3F8
                :cedar-chest [7.97, 63.68, 78.82, 1] ; #C95A49
+               :cherry      [349, 82.57, 85.49, 1] ; #DA2647
+               :chocolate   [21.94, 49.21, 74.12, 1] ; #BD8260
+               :coconut     [0, 0, 99.61, 1] ; #FEFEFE
+               :daffodil    [60, 80.78, 100, 1] ; #FFFF31
+               :dirt        [29.17, 46.45, 60.78, 1] ; 9B7653
+               :eucalyptus  [160.82, 68.37, 84.31, 1] ; #44D7A8
+               :fresh-air   [196.18, 34.9, 100, 1] ; #A6E7FF
+               :grape       [272.2, 73.21, 65.88, 1] ; #6F2DA8
+               :jelly-bean  [8.14, 64.22, 85.49, 1] ; #DA614E
+               :leather-jacket [135, 30.19, 20.78, 1] ; #253529
                }))
 
 (defn update-hue [[h s b a :as color] f & args]
