@@ -96,7 +96,38 @@
             :sugar-plum      [325.07, 46.21, 56.86, 1] ; #914E75
             :twilight-lavender [328.62, 47.1, 54.12, 1] ; #8A496B
             :wintergreen-dream [166.8, 36.76, 53.33, 1] ; #56887D
-            }))
+            }
+   #:fragrance{:baby-powder [60, 1.57, 99.61, 1] ; #FEFEFA
+               :banana      [47.04, 83.53, 100, 1] ; #FFD12A
+               :blueberry   [220.36, 68.02, 96.86, 1] ; #4F86F7
+               :bubble-gum  [309.55, 17.25, 100, 1] ; #FFD3F8
+               :cedar-chest [7.97, 63.68, 78.82, 1] ; #C95A49
+               :cherry      [349, 82.57, 85.49, 1] ; #DA2647
+               :chocolate   [21.94, 49.21, 74.12, 1] ; #BD8260
+               :coconut     [0, 0, 99.61, 1] ; #FEFEFE
+               :daffodil    [60, 80.78, 100, 1] ; #FFFF31
+               :dirt        [29.17, 46.45, 60.78, 1] ; 9B7653
+               :eucalyptus  [160.82, 68.37, 84.31, 1] ; #44D7A8
+               :fresh-air   [196.18, 34.9, 100, 1] ; #A6E7FF
+               :grape       [272.2, 73.21, 65.88, 1] ; #6F2DA8
+               :jelly-bean  [8.14, 64.22, 85.49, 1] ; #DA614E
+               :leather-jacket [135, 30.19, 20.78, 1] ; #253529
+               :lemon       [60, 78.04, 100, 1] ; #FFFF38
+               :licorice    [6, 38.46 10.2, 1] ; #1A1110
+               :lilac       [287.23, 39.33, 93.73 1] ; #DB91EF
+               :lime        [76.18, 99.18 95.29, 1]  ; #B2F302
+               :lumber      [27.6, 19.61, 100, 1] ; #FFE4CD
+               :new-car     [223.27, 83.33, 77.65, 1] ; #214FC6
+               :orange      [13.33, 60, 100, 1] ; #FF8866
+               :peach       [19.71, 27.45, 100, 1] ; #FFD0B9
+               :pine        [156.13, 57.41, 63.53, 1] ; #45A27D
+               :rose        [0, 68.63, 100, 1] ; #FF5050
+               :shampoo     [317.5, 18.82, 100, 1] ; #FFCFF1
+               :smoke       [132, 11.54, 50.98, 1] ; #738276
+               :soap        [249.23, 16.32, 93.73, 1] ; #CEC8EF
+               :strawberry  [341.11, 64.29, 98.82, 1] ; #FC5A8D
+               :tulip       [357, 47.06, 100, 1] ; #FF878D
+               }))
 
 (defn update-hue [[h s b a :as color] f & args]
   (assert (vector? color))
