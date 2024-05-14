@@ -30,8 +30,12 @@
                   :shocking-pink     [300, 56.86, 100, 1]
                   :sunglow           [45, 80, 100, 1]
                   :wild-watermelon   [349.26, 64.03, 99.22, 1]}
-    #:bright{:red-salsa    [355.08, 77.08, 99.22, 1]
+    #:bright{:sizzling-red [351.26, 78.04, 100, 1]
+             :red-salsa    [355.08, 77.08, 99.22, 1]
+             :tart-orange  [2.32, 72.11, 98.43, 1] ; #FB4D46
              :orange-soda  [9.52, 75.6, 98.04, 1]
+             :bright-yellow [37.43, 88.63, 100, 1] ; #FFAA1D
+             :yellow-sunshine [58.12, 100, 100, 1] ; #FFF700
              :denim-blue   [226.62, 81.32, 71.37, 1]
              :spring-frost [93.8, 83.53, 100, 1]}
     #:metallic{:bdazzled-blue       [215.29, 68.92, 58.04, 1]
