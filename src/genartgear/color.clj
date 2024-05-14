@@ -55,9 +55,23 @@
             :winter-sky   [330.82, 100, 100, 1] ; #FF007C
             :frostbite    [322.12, 76.82, 91.37, 1] ; #E936A7
             }
-   #:metallic{:bdazzled-blue       [215.29, 68.92, 58.04, 1]
-              :seaweed             [186.46, 92.86, 54.9, 1]
-              :bittersweet-shimmer [358.93, 58.64, 74.9, 1]}))
+   #:metallic{:alloy-orange        [27.33, 91.84, 76.86, 1] ; #C46210
+              :bdazzled-blue       [215.29, 68.92, 58.04, 1]
+              :big-drip-o-ruby     [345.38, 76.28, 61.18, 1] ; #9C2542
+              :bittersweet-shimmer [358.93, 58.64, 74.9, 1]
+              :blast-off-bronze    [12, 39.39, 64.71, 1] ; #A57164
+              :cyber-grape         [262.76, 46.77, 48.63, 1] ; #58427C
+              :deep-space-sparkle  [194.12, 31.48, 42.35, 1] ; #4A646C
+              :gold-fusion         [42.55, 41.35, 52.16, 1] ; #85754E
+              :illuminating-emerald [163.75, 66.21, 56.86, 1] ; #319177
+              :metallic-seaweed    [186.46, 92.86, 54.9, 1] ; #0A7E8C
+              :metallic-sunburst   [40.8, 64.1, 61.18, 1] ; #9C7C38
+              :razzmic-berry       [307.62, 44.68, 55.29, 1] ; #8D4E85 
+              :sheen-green         [79.53, 100, 83.14, 1] ; #8FD400
+              :shimmering-blush    [349.16, 38.25, 85.1, 1] ; #D98695
+              :sonic-silver        [0, 0, 45.88, 1] ; #757575 
+              :steel-blue          [194.74, 100, 67.06, 1] ; #0081AB
+              }))
 
 (defn update-hue [[h s b a :as color] f & args]
   (assert (vector? color))
