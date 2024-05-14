@@ -144,7 +144,13 @@
                     :sapphire [215.17, 72.05, 63.14, 1] ; #2D5DA1
                     :smokey-topaz [14.75, 90.08, 51.37, 1] ; #832A0D
                     :tigers-eye [31.14, 87.29, 70.98, 1] ; #B56917
-                    }))
+                    }
+   #:magic-scent{:burnt-sienna   [13.82, 65.24, 91.37, 1] ; #E97451
+                 :tickle-me-pink [342.1, 49.21, 98.82, 1] ; #FC80A5
+                 :brick-red      [351.76 77.27 77.65 1] ; #C62D42
+                 :wisteria       [281, 27.27, 86.27, 1] ; #C9A0DC
+                 :sky-blue       [189.83, 49.57, 91.76, 1] ; #76D7EA
+                 }))
 
 (defn update-hue [[h s b a :as color] f & args]
   (assert (vector? color))
