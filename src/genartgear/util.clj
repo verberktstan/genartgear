@@ -1,7 +1,6 @@
 (ns genartgear.util
   (:require [genartlib.algebra :as a]
-            [genartlib.util :as u]
-            [quil.core :as q]))
+            [genartlib.util :as u]))
 
 (defn point?
   [point]
@@ -57,7 +56,7 @@
           (+ lo (- lo input)))))))
   ([input lo hi] ((fold lo hi) input)))
 
-(defn tanh-curve
+#_(defn tanh-curve
   "Map input along a curve."
   [{:keys [negate? factor]
     :or {factor 1}}
