@@ -6,6 +6,20 @@ Some functions to ease the usage of Quil for Generative Art.
 
 ## Getting started
 
+### Leiningen/Boot
+`[org.clojars.stanv/genartgear "0.1.7"]`
+
+### Clojure CLI/deps.edn
+`org.clojars.stanv/genartgear {:mvn/version "0.1.7"}`
+
+### Gradle
+`implementation("org.clojars.stanv:genartgear:0.1.7")`
+
+### Maven
+`implementation("org.clojars.stanv:genartgear:0.1.7")`
+
+### Or
+
 Copy `genartgear-0.1.4-SNAPSHOT.jar` to the :resource-paths of your Quil project. 
 
 ..or create a Jar with `lein uberjar` and copy the (non-standalone) jar to the :resource-paths of your Quil project.
