@@ -82,6 +82,20 @@
             :granite-gray    [0, 0, 40.39, 1] ; #676767
             :green-sheen     [167.81, 36.78, 68.24, 1] ; #6EAEA1
             :lilac-luster    [310.91, 12.64, 68.24, 1] ; #AE98AA
+            :misty-moss      [53.82, 36.36, 73.33, 1] ; #BBB477
+            :mystic-maroon   [329.43, 61.27, 67.84, 1] ; #AD4379
+            :pearly-purple   [315.95, 43.17, 71.76, 1] ; #B768A2
+            :pewter-blue     [200.45, 24.04, 71.76, 1] ; #8BA8B7
+            :polished-pine   [165.63, 43.29, 64.31, 1] ; #5DA493
+            :quick-silver    [0, 0, 65.1, 1] ; #A6A6A6
+            :rose-dust       [344.06, 40.51, 61.96, 1] ; #9E5E6F
+            :rusty-red       [352.07, 79.82, 85.49, 1] ; #DA2C43
+            :shadow-blue     [213.91, 27.88, 64.71, 1] ; #778BA5
+            :shiny-shamrock  [140.83, 43.11, 65.49, 1] ; #5FA778
+            :steel-teal      [181.36, 31.65, 54.51, 1] ; #5F8A8B
+            :sugar-plum      [325.07, 46.21, 56.86, 1] ; #914E75
+            :twilight-lavender [328.62, 47.1, 54.12, 1] ; #8A496B
+            :wintergreen-dream [166.8, 36.76, 53.33, 1] ; #56887D
             }))
 
 (defn update-hue [[h s b a :as color] f & args]
