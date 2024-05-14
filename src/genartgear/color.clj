@@ -82,6 +82,11 @@
             :granite-gray    [0, 0, 40.39, 1] ; #676767
             :green-sheen     [167.81, 36.78, 68.24, 1] ; #6EAEA1
             :lilac-luster    [310.91, 12.64, 68.24, 1] ; #AE98AA
+            :misty-moss      [53.82, 36.36, 73.33, 1] ; #BBB477
+            :mystic-maroon   [329.43, 61.27, 67.84, 1] ; #AD4379
+            :pearly-purple   [315.95, 43.17, 71.76, 1] ; #B768A2
+            :pewter-blue     [200.45, 24.04, 71.76, 1] ; #8BA8B7
+            :polished-pine   [165.63, 43.29, 64.31, 1] ; #5DA493
             }))
 
 (defn update-hue [[h s b a :as color] f & args]
