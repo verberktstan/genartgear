@@ -45,8 +45,16 @@
             :sweet-brown  [3.03, 70.83, 65.88, 1] ; #A83731
             :brown-sugar  [20.2, 56, 68.63, 1] ; #AF6E4D
             :eerie-black  [0, 0, 10.59, 1] ; #1B1B1B
-            :black-shadows [348.75, 8.38, 74.9, ] ; #BFAFB2
-            :spring-frost [93.8, 83.53, 100, 1]}
+            :black-shadows [348.75, 8.38, 74.9] ; #BFAFB2
+            :fiery-rose   [350.18, 67.06, 100, 1] ; #FF5470
+            :sizzling-sunrise [51.53, 100, 100, 1] ; #FFDB00
+            :heat-wave    [28.71, 100, 100, 1] ; #FF7A00
+            :lemon-glacier [60.47, 100, 100, 1] ; #FDFF00
+            :spring-frost [93.8, 83.53, 100, 1]
+            :absolute-zero [216.77, 100, 72.94, 1] ; #0048BA
+            :winter-sky   [330.82, 100, 100, 1] ; #FF007C
+            :frostbite    [322.12, 76.82, 91.37, 1] ; #E936A7
+            }
    #:metallic{:bdazzled-blue       [215.29, 68.92, 58.04, 1]
               :seaweed             [186.46, 92.86, 54.9, 1]
               :bittersweet-shimmer [358.93, 58.64, 74.9, 1]}))
