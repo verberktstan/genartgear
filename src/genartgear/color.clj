@@ -16,10 +16,13 @@
 (def CRAYOLA
   (merge
     #:crayola{:vivid-violet [289.21, 61.81, 56.47, 1]}
-    #:fluorescent{:outrageous-orange [12.3, 78.43, 100, 1]
+    #:fluorescent{:atomic-tangerine  [20, 60, 100, 1]
+                  :outrageous-orange [12.3, 78.43, 100, 1]
                   :radical-red       [347.8, 79.22, 100, 1]
                   :blizzard-blue     [195.6, 65.22, 90.2, 1]
-                  :screamin-green    [120, 60, 100, 1]}
+                  :neon-carrot       [30, 80, 100, 1]
+                  :screamin-green    [120, 60, 100, 1]
+                  :wild-watermelon   [349.26, 64.03, 99.22, 1]}
     #:bright{:red-salsa    [355.08, 77.08, 99.22, 1]
              :orange-soda  [9.52, 75.6, 98.04, 1]
              :denim-blue   [226.62, 81.32, 71.37, 1]
