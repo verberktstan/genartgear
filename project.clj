@@ -1,6 +1,6 @@
-(defproject genartgear "0.1.4-SNAPSHOT"
+(defproject genartgear "0.1.5"
   :description "Genart Gear - A library with utilitys for generative artwork in Quil."
-  :url "http://example.com/FIXME"
+  :url "https://github.com/verberktstan/genartgear"
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[genartlib/genartlib "0.1.25"]
