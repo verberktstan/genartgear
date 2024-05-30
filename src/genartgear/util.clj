@@ -10,12 +10,12 @@
        (every? point? line)))
 
 (defn clip
-  "Returns a function that returns a clipped value between lo and hi. When input
+"Returns a function that returns a clipped value between lo and hi. When input
   is given, clip returns the result immediately."
-  ([lo hi]
-   (comp (partial max lo) (partial min hi)))
-  ([input lo hi]
-   ((clip lo hi) input)))
+  ([] (clip 0))
+  ([lo] (fn clip* [input] (some-> input (max lo))))
+  ([lo hi] (fn clip* [input] (some-> input (max lo) (min hi))))
+  ([input lo hi] ((clip lo hi) input)))
 
 (defn wrap
   "Returns a function that returns a wrapped value between lo and hi. When input
