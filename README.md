@@ -7,16 +7,16 @@ Some functions to ease the usage of Quil for Generative Art.
 ## Getting started
 
 ### Leiningen/Boot
-`[org.clojars.stanv/genartgear "0.1.7"]`
+`[org.clojars.stanv/genartgear "0.1.71"]`
 
 ### Clojure CLI/deps.edn
-`org.clojars.stanv/genartgear {:mvn/version "0.1.7"}`
+`org.clojars.stanv/genartgear {:mvn/version "0.1.71"}`
 
 ### Gradle
-`implementation("org.clojars.stanv:genartgear:0.1.7")`
+`implementation("org.clojars.stanv:genartgear:0.1.71")`
 
 ### Maven
-`implementation("org.clojars.stanv:genartgear:0.1.7")`
+`implementation("org.clojars.stanv:genartgear:0.1.71")`
 
 ### Or
 
