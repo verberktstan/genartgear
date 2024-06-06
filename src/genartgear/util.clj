@@ -56,3 +56,17 @@
     factor (* factor)
     :always clojure.math/tanh
     negate? inc))
+
+(defn lag
+  "Returns num `x` with - up to - positive num `rate` added or subtracted, in order to reach num `target`.
+   `(lag 0.1 1 0.2) => 0.3`"
+  ([x target rate]
+    (lag x target rate rate))
+  ([x target rate-up rate-down]
+    (let [nums? (every? number? [x target])
+          rates? (every? pos? [rate-up rate-down])]
+    (cond-> x
+      (and nums? rates? (< x target))
+      (+ (-> target (- x) (min rate-up)))
+      (and nums? rates? (> x target))
+      (- (-> x (- target) (min rate-down)))))))
