@@ -1,7 +1,8 @@
 (ns genartgear.util
   (:require
    [easings.core :as ease]
-   [quil.core :as q]))
+   [quil.core :as q]
+   [clojure.edn :as edn]))
 
 (defn point?
   [point]
@@ -92,7 +93,7 @@
   to the first point, 0.1 is very near the first point, 0.5 is half-way in
   between, etc.
   When you supply `:ease` keyword, the mapping is not linear but follows the
-  easing functions. 
+  specified easing function.
   The interpolate function is convenient for creating motion along a straight or
   eased path."
   [{:keys [start stop ease]
@@ -112,3 +113,13 @@
   (interpolate {:ease :in-out-expo} 0.15)
   (interpolate {:ease :in-circ} 0.15)
   (interpolate {:ease :out-back} 0.15))
+
+(defn round [x & args]
+  (let [{:keys [precision] :or {precision 2}} (apply hash-map args)
+        factor (get {0 1 1 10 2 100 3 1000 4 10000 5 100000 6 1000000 7 10000000 8 100000000 9 1000000000} precision)
+        fmt    (str "%." precision "f")]
+    (assert (and precision factor))
+    (cond->>
+     (some-> x (* factor) (+ 0.5) int (/ factor) double)
+      (and fmt x) (format fmt)
+      (and fmt x) edn/read-string)))
