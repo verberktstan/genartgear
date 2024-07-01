@@ -17,3 +17,12 @@
     7 0.1234568
     8 0.12345679
     9 0.123456789))
+
+(deftest spread
+  (are [result inputs] (= result (map #(sut/round % :precision 4) (apply sut/spread inputs)))
+    [0.25 0.75] [2]
+    [0.1667 0.5 0.8333] [3]
+    [0.1 0.3 0.5 0.7 0.9] [5]
+    [0.0625 0.1875 0.3125 0.4375 0.5625 0.6875 0.8125 0.9375] [8])
+  (is (thrown? AssertionError (sut/spread 0)))
+  (is (thrown? AssertionError (sut/spread nil))))

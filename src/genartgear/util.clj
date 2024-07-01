@@ -123,3 +123,12 @@
      (some-> x (* factor) (+ 0.5) int (/ factor) double)
       (and fmt x) (format fmt)
       (and fmt x) edn/read-string)))
+
+(defn spread
+  "Returns a range between 0..1 with padding on both low and high ends of the range."
+  [n]
+  ;; TODO: Make padding flexible?
+  (-> n pos-int? assert)
+  (let [pad  (/ 0.5 n)
+        step (/ 1 n)]
+    (range pad 1 step)))
