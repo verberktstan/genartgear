@@ -1,7 +1,9 @@
 (ns genartgear.pack
+  "Pack objects based on simplistic collision detection."
+  {:added "0.1.5"
+   :author "Stan Verberkt"}
   (:require [genartgear.core :refer [sketch]]
             [genartlib.algebra :as a]
-            [genartlib.random :as r]
             [genartlib.util :as u]
             [quil.core :as q]))
 
@@ -66,13 +68,15 @@
 ;; Public pack function
 
 (defn pack
-  "Makes items with the :make-item function, and packs those.
-  :make-item (fn) should not accept any arguments and return a new/different item
-  on every call.
-  pack returns up to :n (positive integer value) items packed.
-  pack also accepts :remove-fn, :max-retries & :init-state, see pack* docstring for more info.
-  Make your own magic by implementing :make-item and :remove-fn. Tweak :n and
-  :max-retries for optimization"
+  {:added "0.1.5"
+   :arglist '([{:keys [make-item n init-state max-retries remove-fn]}])
+   :doc "Makes items with the :make-item function, and packs those.
+   :make-item (fn) should not accept any arguments and return a new/different item
+   on every call. pack returns up to :n (positive integer value) items packed.
+   pack also accepts :remove-fn, :max-retries & :init-state, see pack* docstring
+   for more info.
+   Make your own magic by implementing :make-item and :remove-fn. Tweak :n and
+   :max-retries for optimization"}
   [{:keys [make-item n]
     :or   {make-item random-point n 999}
     :as   props}]

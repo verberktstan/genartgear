@@ -1,4 +1,7 @@
 (ns genartgear.core
+  "Utilities for sketching genart stuff with quil and genartlib. Most notably the sketch macro."
+  {:added "0.0.1-SNAPSHOT"
+   :author "Stan Verberkt"}
   (:require [clojure.java.shell :refer [sh]]
             [clojure.string :as str]
             [genartlib.util :as u]

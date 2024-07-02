@@ -1,4 +1,7 @@
 (ns genartgear.util
+  "Some generally usefull utilities (for generative artwork)."
+  {:added "0.1.4-SNAPSHOT"
+   :author "Stan Verberkt"}
   (:require
    [easings.core :as ease]
    [quil.core :as q]
@@ -14,38 +17,48 @@
        (every? point? line)))
 
 (defn clip
-"Returns a function that returns a clipped value between lo and hi. When input
-  is given, clip returns the result immediately."
+  {:added "0.1.4-SNAPSHOT"
+   :arglist '([] [lo] [lo hi] [input lo hi])
+   :doc "Returns a function that returns a clipped value between lo and hi. When input
+   is given, clip returns the result immediately."}
   ([] (clip 0))
   ([lo] (fn clip* [input] (some-> input (max lo))))
   ([lo hi] (fn clip* [input] (some-> input (max lo) (min hi))))
   ([input lo hi] ((clip lo hi) input)))
 
 (defn wrap
-  "Returns a function that returns a wrapped value between lo and hi. When input
-  is given, wrap returns the result immediately."
+  {:added "0.1.4-SNAPSHOT"
+   :arglist '([lo hi] [input lo hi])
+   :doc "Returns a function that returns a wrapped value between lo and hi. When input
+   is given, wrap returns the result immediately."}
   ([lo hi]
    (assert (> hi lo))
-   (let [diff (- hi lo)]
+   (let [diff       (- hi lo)
+         init-depth 5]
      (fn wrap* [input]
-       (loop [x input]
+       (loop [x     input
+              depth init-depth]
+         (when (zero? depth)
+           (throw (ex-info "Maximum depth reached!" {:input x :lo lo :hi hi :diff diff :init-depth init-depth})))
          (if (<= lo x hi)
            x
-           (recur (if (< x lo) (+ x diff) (- x diff))))))))
+           (recur (if (< x lo) (+ x diff) (- x diff)) (dec depth)))))))
   ([input lo hi]
    ((wrap lo hi) input)))
 
 (defn fold
-  "Returns a function that returns a folded value between lo and hi. When input
-  is given, wrap returns the result immediately."
+  {:added "0.1.5"
+   :arglist '([lo hi] [input lo hi])
+   :doc "Returns a function that returns a folded value between lo and hi. When input
+  is given, wrap returns the result immediately."}
   ([lo hi] (-> lo (< hi) assert)
-  (fn fold* [input]
-    (if (<= lo input hi)
-      input
-      (recur
-        (if (> input hi)
-          (- hi (- input hi))
-          (+ lo (- lo input)))))))
+           (fn fold* [input]
+             (if (<= lo input hi)
+               input
+               (recur
+                (if (> input hi)
+                  (- hi (- input hi))
+                  (+ lo (- lo input)))))))
   ([input lo hi] ((fold lo hi) input)))
 
 #_(defn tanh-curve

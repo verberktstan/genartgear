@@ -1,4 +1,7 @@
 (ns genartgear.color
+  "Color palettes and modifing based on HSBA colors."
+  {:added "0.1.3-SNAPSHOT"
+   :author "Stan Verberkt"}
   (:require [genartgear.util :refer [clip wrap]]))
 
 ;; All colors are defined in HSBA
