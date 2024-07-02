@@ -1,4 +1,4 @@
-(defproject org.clojars.stanv/genartgear "0.1.71"
+(defproject org.clojars.stanv/genartgear "0.1.72"
   :description "Genart Gear - A library with utilitys for generative artwork in Quil."
   :url "https://github.com/verberktstan/genartgear"
   :license {:name "Eclipse Public License"
